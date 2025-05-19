@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: blue;">
+    <button onclick="document.body.style.backgroundColor = 'red';">Red</button>
+    <button onclick="document.body.style.backgroundColor = 'blue';">Blue</button>
+    <input type="text" id="input" placeholder="Введите текст">
+    <p id="output"></p>
+    <div id="cube" style="width: 100px; background-color: lightblue; height: 100px;"></div>
+    <script>
+        var a = input.leght
+    const input = document.getElementById('myInput');
+    const output = document.getElementById('output');
+    
+    input.addEventListener('input', (event) => {
+        output.textContent = `Вы ввели: ${event.target.value}`;
+    });
+        const hoverArea = document.getElementById('cube');
+        hoverArea.addEventListener('mouseover', () => {
+            hoverArea.style.background = 'lightgreen';
+        });
+        hoverArea.addEventListener('mouseout', () => {
+            hoverArea.style.background = 'lightblue';
+        });
+    </script>
+</body> 
+</html>
