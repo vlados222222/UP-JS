@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="document.body.style.fontSize = '30px';">Увеличить</button>
+    <button onclick="document.body.style.fontSize = '14px';">Уменьшить</button>
+    <p>ТЕСТ текст</p>
+    <div id="cube" style="width: 100px; height: 100px; background-color: lightblue; transition: all 0.5s ease;"></div>
+    <p>Введите пароль, пароль: "пароль"</p>
+    <p id="ee"></p>
+    <input style="border-radius: 5px;" type="text" id="text" placeholder="Пароль">
+    <script>
+        const hoverArea = document.getElementById('cube');
+        const input = document.getElementById('text');
+        hoverArea.addEventListener('mouseover', () => {
+            hoverArea.style.background = 'lightgreen';
+            hoverArea.style.transform = 'scale(1.2)';
+        });
+        hoverArea.addEventListener('mouseout', () => {
+            hoverArea.style.background = 'lightblue';
+            hoverArea.style.transform = 'scale(1)';
+        });
+        const pparol = 'пароль'
+        const ee = document.getElementById('ee');
+        input.addEventListener('input', (event) => {
+            const length = event.target.value.length;
+            ee.textContent = `Длина текста: ${length}`;
+            const parol = input.value;
+            if (parol !== pparol){
+                input.style.border = '1px solid red';
+            } else {
+                input.style.border = '1px solid green';
+            }
+        });
+    </script>
+</body>
+</html>
