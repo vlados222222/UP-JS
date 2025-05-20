@@ -9,23 +9,24 @@
     <button onclick="document.body.style.backgroundColor = 'red';">Red</button>
     <button onclick="document.body.style.backgroundColor = 'blue';">Blue</button>
     <input type="text" id="input" placeholder="Введите текст">
-    <p id="output"></p>
+    <p id="output">Длина текста: 0</p>
     <div id="cube" style="width: 100px; background-color: lightblue; height: 100px;"></div>
     <script>
-        var a = input.leght
-    const input = document.getElementById('myInput');
-    const output = document.getElementById('output');
-    
-    input.addEventListener('input', (event) => {
-        output.textContent = `Вы ввели: ${event.target.value}`;
-    });
         const hoverArea = document.getElementById('cube');
         hoverArea.addEventListener('mouseover', () => {
             hoverArea.style.background = 'lightgreen';
+            hoverArea.style.boxShadow = '0 0 20px rgba(20,20,20,12)';
         });
         hoverArea.addEventListener('mouseout', () => {
             hoverArea.style.background = 'lightblue';
+            hoverArea.style.boxShadow = '0 0 0px rgba(0,0,0,0.5)';
         });
+        const textInput = document.getElementById('input');
+        const textLengthDisplay = document.getElementById('output');
+        input.addEventListener('input', (event) => {
+            const length = event.target.value.length;
+            textLengthDisplay.textContent = `Длина текста: ${length}`;
+        });
     </script>
 </body> 
 </html>
