@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 10px 10px 10px 10px;">
+    <button id="but">Кнопка</button><br>
+    <a href="" id="a">Сылка</a><br>
+    <input id="input" type="text" placeholder="Поле ввода"><br>
+    <a href="" id="a2">Сылка с отмененнием</a><br>
+    <button id="but2">Кнопка с остановкой вспылия</button><br>
+    <div id="but3" style="width: 300px; height: 300px; background-color: gray;"></div>
+    <p id="text"></p>
+    <script>
+        but.addEventListener ('click', function(event) {
+            alert(`Зря вы сюда нажали ${event.type}`)   
+        });
+        a.addEventListener ('mouseover', function(event) {
+            alert(`на сылку навелись мышкою ${event.type}`)   
+        });
+        input.addEventListener ('keypress', function(event) {
+            alert(`Ох и зря вы нажали на кнопку: ${event.type}`)
+        })
+        a2.addEventListener ('mouseover', function(event) {
+            event.preventDefault();
+            alert(`Переход по сылке отменен ${event.type}`)   
+        });
+        but2.addEventListener ('click', function(event) {
+            alert(`Зря вы сюда нажали ${event.type}`)
+            event.stopPropagation();   
+        });
+        but3.addEventListener ('click', function(event) {
+            text.textContent = `Координаты мыши: X=${event.clientX}, Y=${event.clientY}`;
+        });
+        
+    </script>
+</body>
+</html>
